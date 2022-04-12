@@ -12,7 +12,7 @@
 body{
     color: white;
    
-    background: linear-gradient(40deg, rgba(0,0,0,1) 0%, rgba(6,3,31,1) 100%);
+    background: linear-gradient(40deg, rgba(0,0,0,1) 0%, rgb(4, 1, 32) 100%);
 
     height: 1000px;
     background-repeat: no-repeat;
@@ -85,4 +85,8 @@ box-shadow: 0px 0px 13px 3px rgba(0,0,0,0.6);
 box-shadow: 0px 0px 13px 3px rgba(0,0,0,0.6);
 transform: scale(1.02);
 
+}
+.idk{
+    width: 530px;
+  
 }
