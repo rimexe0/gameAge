@@ -4500,10 +4500,19 @@ textarea.form-control-lg {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #fff;
+  background-color: rgb(79, 79, 79);
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 0.25rem;
+  border-radius: 0.80rem;
+  
+  -webkit-box-shadow: 0px 0px 17px -6px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 17px -6px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 17px -6px rgba(0,0,0,0.75);
+}
+.card:hover{
+  -webkit-box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.75);
 }
 .card > hr {
   margin-right: 0;
@@ -4599,14 +4608,14 @@ textarea.form-control-lg {
 
 .card-img,
 .card-img-top {
-  border-top-left-radius: calc(0.25rem - 1px);
-  border-top-right-radius: calc(0.25rem - 1px);
+  border-top-left-radius: 0.80rem;
+  border-top-right-radius: 0.80rem;
 }
 
 .card-img,
 .card-img-bottom {
-  border-bottom-right-radius: calc(0.25rem - 1px);
-  border-bottom-left-radius: calc(0.25rem - 1px);
+  border-bottom-right-radius:0.80rem;
+  border-bottom-left-radius: 0.80rem;
 }
 
 .card-group > .card {
@@ -6684,6 +6693,7 @@ textarea.form-control-lg {
 
 .overflow-hidden {
   overflow: hidden !important;
+  height: 100px;
 }
 
 .overflow-visible {
