@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="css/splide.min.css">
   </head>
   <body>
-    <h1>Hebele</h1>
+  
     <?php 
     include("companents/navbar.php") ;
     include("companents/bigDisplay.php");
