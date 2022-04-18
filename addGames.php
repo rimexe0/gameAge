@@ -8,15 +8,23 @@
   (int)$gameID=(int)$_POST['gameID'];
   $gameName=$_POST['gameName'];
   $gameDesc=$_POST['gameDesc'];
-  $gameTags=1;
+  $gamePublisher=$_POST['gamePublisher'];
+  $gameDate=$_POST['gameDate'];
+  $gameLikes=$_POST['gameLikes'];
+  $gameDislikes=$_POST['gameDislikes'];
   $gameImage=$_POST['gameImage'];
+  $gamePrice=$_POST['gamePrice'];
+  
+
+ 
+
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
-  $sql = "INSERT INTO games (gameID, gameName,gameDesc, tags,gameImage)
-  VALUES ($gameID, '$gameName', '$gameDesc', '$gameTags','$gameImage')";
+  $sql = "INSERT INTO games (`gameID`, `gameName`, `gameDesc`, `gamePublisher`, `gameDate`, `gameLikes`, `gameDislikes`, `gameImage`, `gamePrice`)
+                     VALUES ('$gameID', '$gameName', '$gameDesc', '$gamePublisher', '$gameDate', '$gameLikes', '$gameDislikes', '$gameImage', '$gamePrice')";
   
   if ($conn->query($sql) === TRUE) {
-    header('Location: main.php'); //If book.php is your main page where you list your all records
+    echo "ok";
   } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
   }
@@ -26,7 +34,7 @@
   
     }
   else
-  echo "ur suck lol";
+  echo "something happend. Prob. db issue";
 
 
  

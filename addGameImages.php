@@ -5,16 +5,16 @@
   if ($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
     }
-  (int)$tagId=(int)$_POST['tagID'];
-  $tagName=$_POST['tagName'];
+  (int)$ImageID=(int)$_POST['ImageID'];
+  $Image=$_POST['Image'];
   (int)$gameID=(int)$_POST['gameID'];
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
-  $sql = "INSERT INTO tags (tagID, tagNAME,gameID)
-  VALUES ($tagId, '$tagName', '$gameID')";
+  $sql = "INSERT INTO gameImages (ImageID, Image,gameID)
+  VALUES ($ImageID, '$Image', '$gameID')";
   
   if ($conn->query($sql) === TRUE) {
-echo "ok";
+   echo "ok";
   } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
   }

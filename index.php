@@ -1,3 +1,13 @@
+<?php 
+if(isset($_SESSION['id'])){
+session_start();
+}
+else(
+  
+  $_SESSION['user_name'] = 'guest'
+)
+
+?>
 <!DOCTYPE html>
 <html lang="">
   <head>
@@ -15,6 +25,7 @@
     include("companents/bigDisplay.php");
     include("selecGames.php");
     ?>
+    
     <div class="center">
     <div class="game-list row mt-5">
       <?php get_games();
