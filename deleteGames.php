@@ -12,7 +12,7 @@ $gameId = $_GET['gameId'];
 
  if (mysqli_query($conn, $sql)) {
     mysqli_close($conn);
-    echo "ok"; 
+    header("Location: adminPage.php");
     exit;
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;

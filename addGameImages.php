@@ -14,7 +14,7 @@
   VALUES ($ImageID, '$Image', '$gameID')";
   
   if ($conn->query($sql) === TRUE) {
-   echo "ok";
+    header("Location: adminPage.php");
   } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
   }

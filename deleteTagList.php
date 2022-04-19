@@ -8,7 +8,7 @@
 $tagID = $_GET['tagID'];
 
    
- $sql = "DELETE FROM tags WHERE tagID=$tagID";
+ $sql = "DELETE FROM gametaglist WHERE tagID=$tagID";
  
 
  if (mysqli_query($conn, $sql)) {

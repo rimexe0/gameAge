@@ -42,7 +42,7 @@
 <input type='text' class='form-control my-3' id='gameLikes'  placeholder='gameLikes' name='gameLikes'>
 <input type='text' class='form-control my-3' id='gameDislikes'  placeholder='gameDislikes' name='gameDislikes'>
 
-    <button type='submit' class='btn btn-primary'>Ekle</button>
+    <button type='submit' class='btn button'>Oyun Ekle</button>
   </form>
       </div>
      
@@ -51,8 +51,7 @@
       <form method='post' action="addTags.php" class="form" >
     <input type="text" class='form-control my-3' name='tagID' placeholder="tagid">
     <input type="text" class='form-control my-3' name='tagName' placeholder="tagname">
-    <input type="text" class='form-control my-3' name='gameID' placeholder="gameid">
-    <button type="submit" class="btn btn-primary">Tag Ekle</button>
+    <button type="submit" class="btn button">Tag Ekle</button>
   </form>
   <div class="form">
   <h1 class="display-6">Tag silmek için üstüne tıkla</h1>
@@ -68,19 +67,26 @@
     <input type="text" class='form-control my-3' name='ImageID' placeholder="Imageid">
     <input type="text" class='form-control my-3' name='Image' placeholder="image">
     <input type="text" class='form-control my-3' name='gameID' placeholder="gameid">
-    <button type="submit" class="btn btn-primary">Resim Ekle</button>
+    <button type="submit" class="btn button">Resim Ekle</button>
   </form>
-      </div>
+      
+      <div class="form">
+  <h1 class="display-6">resim silmek için üstüne tıkla</h1>
+  <div class="row ">
+  <?php get_all_images_admin();?>
+  </div>
+  </div>
+  </div>
     </div>
     </div>
     <div class="center">
-    <div class="game-list row mt-5">
+    <div class="game-list row mt-5 justify-content-center">
       
       <?php get_games_admin()?>
     </div>
     </div>
    
-  
+    <?php   include("companents/footer.php")?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/js/splide.min.js"></script>
    

@@ -23,7 +23,9 @@ else(
 </head>
 
 <body>
-  <?php include('companents/navbar.php');
+  <?php 
+  include('companents/navbar.php');
+
 
   include("config.php");
   include("selecGames.php");
@@ -55,9 +57,9 @@ else(
             echo "<div id='carouselExampleSlidesOnly' class='carousel slide games-page-img' data-bs-ride='carousel'>";
             echo "<div class='carousel-inner'>";
             echo " <div class=' carousel-item active  '>" ;
-            echo "  <img src='$gameImage' class='card-img'  alt='$gameName'>" ;
+            echo "  <img src='$gameImage' class='games-page-img'  alt='$gameName'>" ;
             echo "</div>";
-            get_gameImages($gameId);
+            get_gameImagesBig($gameId);
             echo "</div>";
             echo "</div>";
             
@@ -90,7 +92,12 @@ else(
 ";
       }
     }
-  } ?>
+  } 
+  
+  include("companents/footer.php");
+  
+  ?>
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/js/splide.min.js"></script>
     

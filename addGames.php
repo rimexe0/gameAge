@@ -2,6 +2,7 @@
 
 
   include ("config.php");
+  include("selecGames.php");
   if ($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
     }
@@ -24,7 +25,7 @@
                      VALUES ('$gameID', '$gameName', '$gameDesc', '$gamePublisher', '$gameDate', '$gameLikes', '$gameDislikes', '$gameImage', '$gamePrice')";
   
   if ($conn->query($sql) === TRUE) {
-    echo "ok";
+    header("Location: adminPage.php");
   } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
   }
