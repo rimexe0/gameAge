@@ -1,5 +1,9 @@
 <?php 
 
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
+  
 echo "
 
 <nav class='navbar navbar-expand-lg navbar-dark bg py-4'>  <!--navbar-->
@@ -25,11 +29,12 @@ echo "
             </li>
           </ul>
           <li class=' navbar-nav nav-item d-flex'>";
-          if($_SESSION['user_name'] == 'guest'){
-            echo "<a class='nav-link' href='login.php'>Login</a>";
+          if(isset($_SESSION['id'])){
+            echo "<a class='nav-link' href='logout.php'>Logout</a>";
           }
           else{
-            echo "<a class='nav-link' href='logout.php'>Logout</a>";
+            
+            echo "<a class='nav-link' href='login.php'>Login</a>";
           }
           echo "
           </li>

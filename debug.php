@@ -1,10 +1,8 @@
 <?php 
-session_start();
-
-if($_SESSION['user_name'] !== 'joe'){
-  // isn't admin, redirect them to a different page
-  header("Location: /index.php");
-}
+if(isset($_SESSION['id'])){
+    session_start();
+    }
+    
  ?>
 <!DOCTYPE html>
 <html lang="">

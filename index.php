@@ -2,10 +2,7 @@
 if(isset($_SESSION['id'])){
 session_start();
 }
-else(
-  
-  $_SESSION['user_name'] = 'guest'
-)
+
 
 ?>
 <!DOCTYPE html>
