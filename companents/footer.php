@@ -1,6 +1,6 @@
 <?php 
 echo "
-<div class='footer mt-5'></div>"
+<div class='footer mt-5 '></div>"
 
 
 

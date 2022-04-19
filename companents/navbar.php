@@ -15,14 +15,14 @@ echo "
         <div class='collapse navbar-collapse ms-7'  id='navbarSupportedContent'> <!-- navbar items-->
           <ul class='navbar-nav me-auto mb-2 mb-lg-0 '>
             <li class='nav-item me-3'>
-              <a class='nav-link' aria-current='page' href='debug.php'>debug</a>
+              <a class='nav-link' aria-current='page' href='gameList.php'>Game List</a>
             </li>
             <li class='nav-item me-3'>
-              <a class='nav-link' href='#'>Button</a>
+              <a class='nav-link' href='#'>Tag List</a>
             </li>
            
             <li class='nav-item me-3'>
-              <a class='nav-link' href='#'>Button</a>
+              <a class='nav-link' href='#'>Felling Lucky</a>
             </li>
             <li class='nav-item me-3'>
               <a class='nav-link 'href='adminPage.php'>admin</a>

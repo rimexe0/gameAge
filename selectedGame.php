@@ -46,6 +46,8 @@ else(
       $gamePublisher = $row['gamePublisher'];
       $gameDate = $row['gameDate'];
       $gamePrice = $row['gamePrice'];
+      $gameLikes = $row['gameLikes'];
+      $gameDislikes = $row['gameDislikes'];
 
 
       if ($gameId == 0) {
@@ -81,7 +83,7 @@ else(
         echo "
                 
                
-        <div class='mt-3'><span class='mx-3'><i class='bi bi-hand-thumbs-up-fill'></i>333</span><span class='mx-3'><i class='bi bi-hand-thumbs-down-fill'></i>666</span></div>
+        <div class='mt-3'><span class='mx-3'><i class='bi bi-hand-thumbs-up-fill'></i>$gameLikes</span><span class='mx-3'><i class='bi bi-hand-thumbs-down-fill'></i>$gameDislikes</span></div>
             </div>
 
         </div>
