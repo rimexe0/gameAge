@@ -15,16 +15,22 @@ session_start();
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="css/splide.min.css">
   </head>
-  <body>
+  <body >
   
     <?php 
     include("companents/navbar.php") ;
     include("companents/bigDisplay.php");
+    
     include("selecGames.php");
     ?>
     
     <div class="center">
+    <div class="tag-list center">
+      
+      <button onclick="get_games_filtered(222)">yeay</button>
+    </div>
     <div class="game-list row mt-5">
+      
       <?php get_games();
       ?>
     </div>

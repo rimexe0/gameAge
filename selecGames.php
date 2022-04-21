@@ -52,6 +52,48 @@ function get_games()
     }
   }
 }
+function get_games_filtered($gameid)
+{echo "henloi";
+  include('config.php');
+  
+  $sql2 = "SELECT * FROM games where gameID =$gameid " ;
+  $result = $conn->query($sql2);
+  if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+      $gameId = $row['gameID'];
+      $gameName = $row['gameName'];
+      $gameDesc = $row['gameDesc'];
+      $gameImage = $row['gameImage'];
+      if ($gameId == 0) {
+      } else {
+
+        echo "<div class='col-xl-2 col-sm-5 col-lg-4 my-4' data-bs-toggle='modal' data-bs-target='#game_$gameId'>";
+        echo " <div class='card' >";
+
+        echo "   <a href='selectedGame.php?gameId=" . $gameId . "' value='$gameId' class='card-title'>";
+        echo "<div id='carouselExampleSlidesOnly' class='carousel slide' data-bs-ride='carousel'>";
+        echo "<div class='carousel-inner'>";
+        echo " <div class=' carousel-item active card-img '>";
+        echo "  <img src='$gameImage' class='card-img'  alt='$gameName'>";
+        echo "</div>";
+        get_gameImages($gameId);
+        echo "</div>";
+        echo "</div>";
+
+        echo "   <div class='card-body'>";
+        echo "   <h5 class='card-title'> $gameName</h5>";
+        get_tags($gameId);
+        echo "<br>";
+        echo "</a>";
+        echo " </div>";
+        echo "  </div>";
+
+
+        echo "  </div>";
+      }
+    }
+  }
+}
 function get_gameImages($gameid)
 {
   include('config.php');
@@ -178,6 +220,30 @@ function get_all_tags_admin()
     while ($row = $result->fetch_assoc()) {
       $tagID = $row['tagID'];
       echo "<span class='top-seller-tag' " . $row['tagID'] . "'><a href='deleteTags.php?tagID=" . $tagID . "'>" . $row['tagNAME'] . "</a></span>";
+    }
+  }
+}
+function get_all_tags()
+{
+  include('config.php');
+  $sql = "SELECT * FROM tags ";
+  $result = $conn->query($sql);
+  if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+      $tagID = $row['tagID'];
+      echo "<span class='top-seller-tag' " . $row['tagID'] . "'><a href='deleteTags.php?tagID=" . $tagID . "'>" . $row['tagNAME'] . "</a></span>";
+    }
+  }
+}
+function get_all_tags_filter()
+{
+  include('config.php');
+  $sql = "SELECT * FROM tags ";
+  $result = $conn->query($sql);
+  if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+      $tagID = $row['tagID'];
+      echo "<span class='top-seller-tag' " . $row['tagID'] . "'><a onclick=get_games_filtered($GameID)>" . $row['tagNAME'] . "</a></span>";
     }
   }
 }

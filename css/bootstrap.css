@@ -486,6 +486,10 @@ progress {
   font-size: 1.25rem;
   font-weight: 300;
 }
+.dark-text {
+ 
+  color: #000;
+}
 
 .display-1 {
   font-size: calc(1.625rem + 4.5vw);
@@ -2196,13 +2200,13 @@ progress {
   font-weight: 400;
   line-height: 1.5;
   color: #212529;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0);
   background-clip: padding-box;
-  border: 1px solid #ced4da;
+  border: 1px solid #000000;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  border-radius: 0.25rem;
+  border-radius: 1.75rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -4505,6 +4509,22 @@ textarea.form-control-lg {
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.80rem;
   
+  -webkit-box-shadow: 0px 0px 17px -6px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 17px -6px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 17px -6px rgba(0,0,0,0.75);
+}
+.card-contact {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: rgb(255, 255, 255);
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 1.75rem;
+  padding: 1rem;
+  max-width: 35rem;
   -webkit-box-shadow: 0px 0px 17px -6px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 0px 17px -6px rgba(0,0,0,0.75);
   box-shadow: 0px 0px 17px -6px rgba(0,0,0,0.75);
