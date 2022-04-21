@@ -5,9 +5,10 @@
      die("Connection failed: " . $conn->connect_error);
    }
 
-$gameId = $_GET['gameId'];
+$tagID = $_GET['tagID'];
+
    
- $sql = "DELETE FROM games WHERE gameID=$gameId";
+ $sql = "DELETE FROM tags WHERE tagID=$tagID";
  
 
  if (mysqli_query($conn, $sql)) {

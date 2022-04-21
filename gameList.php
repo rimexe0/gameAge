@@ -19,7 +19,7 @@ session_start();
   
     <?php 
     include("companents/navbar.php") ;
-    include("companents/bigDisplay.php");
+   
     include("selecGames.php");
     ?>
     

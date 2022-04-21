@@ -1,7 +1,14 @@
 <?php 
-session_start(); 
-include ('config.php');
 
+include ('config.php');
+if($_SESSION['user_name'] == 'guest'){
+
+	session_unset();
+
+// destroy the session
+session_destroy();
+}
+session_start(); 
 if (isset($_POST['uname']) && isset($_POST['password'])) {
 
 	function validate($data){
