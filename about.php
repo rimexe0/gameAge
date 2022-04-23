@@ -28,9 +28,8 @@ if (isset($_SESSION['id'])) {
         <h2 class="display-3 mb-5">Bir grup öğrenci oyunla ilgili bişeyler yaptık işte</h2>
         <h1 class="display-4">Celal IŞIK</h1>
         <h1 class="display-4">İbrahim ACAR</h1>
-        <span class="display-4">Emir ÖZTÜRK</span> <span class="lead">hebele hübele</span>
-        <h1 class="display-6">idk</h1>
-        <h1 class="display-6">idk</h1>
+        <span class="display-4">Emir ÖZTÜRK</span>
+        
 
         <p></p>
         <a href="#contact" class="btn button btn-lg float-end">iletişime geçin</a>
@@ -46,7 +45,7 @@ if (isset($_SESSION['id'])) {
                     <div class="icon my-2"><i class="bi bi-envelope-fill me-3" aria-hidden="true"></i>
                         <span class="lead ms-1">emirozturk79@gmail.com</span>
                         <p class="lead ms-5">ibrahimacar2078@gmail.com</p>
-                        <p class="lead ms-5">some other 2 people idk</p>
+                        
                     </div>
                 </div>
 
