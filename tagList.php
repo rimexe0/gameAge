@@ -10,7 +10,7 @@ session_start();
   <head>
     <meta charset="utf-8">
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <title>pls dont sue me steam</title>
+    <title>Tag Listesi</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/main.css">
@@ -20,49 +20,27 @@ session_start();
   
     <?php 
     include("companents/navbar.php") ;
-   
    // include("companents/bigDisplay.php");
     
   
     ?>
-
-
-<!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog  modal-dialog-centered ">
-    <div class="modal-content navbar-bg">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">ÖNEMLİ UYARI</h5>
-        
-      </div>
-      <div class="modal-body">
-        BU WEBSİTESİ SADECE EĞİTİM AMAÇLI YAPILMIŞTIR TİCARİ HİÇ BİR AMACI YOKTUR.
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn button" data-bs-dismiss="modal">Tamam</button>
-        
-      </div>
-    </div>
-  </div>
+    
+    
+    <div class="game-list"><h1 class="display-1 mt-5 ">Tür Listesi</h1>
+    <h1 class="display-6">Oyun Türlerinin herhangi birine tıklayarak o tür oyunları bulabilirsin.</h1>
 </div>
+    <div class="form center mt-5">
     
-    <div class="center">
-    
-    <div class="game-list row mt-5">
-    <h1 class="display-1">Oyunlar Listesi</h1>
-    <h1 class="display-6">Oyunların herhangi birine tıklayarak oyun hakkında detaylara ulaşabilirsin.</h1>
-
+    <div class=" align-items-center mt-5">
+      
       <?php
-     
-      get_games();
+      get_all_tags();
       ?>
     </div>
     </div>
+   
     
-   <!-- Button trigger modal -->
-<button type="button" class="btn warning" id="warning-button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-  ÖNEMLİ UYARI
-</button>
+   
     <?php   include("companents/footer.php")?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/js/splide.min.js"></script>
@@ -80,11 +58,9 @@ $(".tag-list").on('wheel',(function(){
 $(".tag-list").mouseleave(function(){
  
 });
-$("#warning-button").click(function(){
-  $("#warning-button").remove();
-});
+
     </script>
-  
+   
   </body>
 
 </html>

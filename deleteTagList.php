@@ -6,9 +6,9 @@
    }
 
 $tagID = $_GET['tagID'];
-
+$GameID = $_GET['GameID'];
    
- $sql = "DELETE FROM gametaglist WHERE tagID=$tagID";
+ $sql = "DELETE FROM gametaglist WHERE tagID=$tagID and GameID=$GameID";
  
 
  if (mysqli_query($conn, $sql)) {

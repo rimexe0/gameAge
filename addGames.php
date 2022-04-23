@@ -8,7 +8,7 @@
     }
   (int)$gameID=(int)$_POST['gameID'];
   $gameName=$_POST['gameName'];
-  $gameDesc=$_POST['gameDesc'];
+  $gameDesc=addslashes( $_POST['gameDesc']);
   $gamePublisher=$_POST['gamePublisher'];
   $gameDate=$_POST['gameDate'];
   $gameLikes=$_POST['gameLikes'];
@@ -21,8 +21,8 @@
 
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
-  $sql = "INSERT INTO games (`gameID`, `gameName`, `gameDesc`, `gamePublisher`, `gameDate`, `gameLikes`, `gameDislikes`, `gameImage`, `gamePrice`)
-                     VALUES ('$gameID', '$gameName', '$gameDesc', '$gamePublisher', '$gameDate', '$gameLikes', '$gameDislikes', '$gameImage', '$gamePrice')";
+ $sql = "INSERT INTO games (`gameID`, `gameName`, `gameDesc`, `gamePublisher`, `gameDate`, `gameLikes`, `gameDislikes`, `gameImage`, `gamePrice`)
+                     VALUES ('$gameID', '$gameName', ' $gameDesc', '$gamePublisher', '$gameDate', '$gameLikes', '$gameDislikes', '$gameImage', '$gamePrice')";
   
   if ($conn->query($sql) === TRUE) {
     header("Location: adminPage.php");

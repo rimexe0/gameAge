@@ -25,11 +25,11 @@
     <?php 
     include("companents/navbar.php") ;
     
-    include("selecGames.php");
+   
     ?>
-    <div class="row">
-      <div class="col">
-      <p class="display-5 text-center">Oyun Ekle</p>
+    <div class=" row justify-content-center mt-5">
+      <div class="col-12 col-lg-4  card-form mx-3">
+      <p class="display-5 text-center dark-text">Oyun Ekle</p>
   <form method='post' action='addGames.php'class="form" >
         <input type='text' class='form-control my-3' id='gameID'  placeholder='gameID' name='gameID'>
         <input type='text' class='form-control my-3' id='gameName'  placeholder='gameName' name='gameName' maxlength='50'>
@@ -46,23 +46,23 @@
   </form>
       </div>
      
-      <div class="col">
-      <p class="display-5 text-center">Tag Ekle</p>
+      <div class="col-12 col-lg-4  card-form mx-3">
+      <p class="display-5 text-center dark-text">Tag Ekle</p>
       <form method='post' action="addTags.php" class="form" >
     <input type="text" class='form-control my-3' name='tagID' placeholder="tagid">
     <input type="text" class='form-control my-3' name='tagName' placeholder="tagname">
     <button type="submit" class="btn button">Tag Ekle</button>
   </form>
   <div class="form">
-  <h1 class="display-6">Tag silmek için üstüne tıkla</h1>
+  <h1 class="display-6 dark-text">Tag silmek için üstüne tıkla</h1>
   <?php get_all_tags_admin();?>
   </div>
   
       </div>
     
 
-    <div class="col ">
-      <p class="display-5 text-center">Resim Ekle</p>
+    <div class="col-12 col-lg-4  card-form mx-3">
+      <p class="display-5 text-center dark-text">Resim Ekle</p>
       <form method='post' action="addGameImages.php" class="form" >
     <input type="text" class='form-control my-3' name='ImageID' placeholder="Imageid">
     <input type="text" class='form-control my-3' name='Image' placeholder="image">
@@ -71,7 +71,7 @@
   </form>
       
       <div class="form">
-  <h1 class="display-6">resim silmek için üstüne tıkla</h1>
+  <h1 class="display-6 dark-text">resim silmek için üstüne tıkla</h1>
   <div class="row ">
   <?php get_all_images_admin();?>
   </div>

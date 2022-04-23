@@ -8,7 +8,7 @@ function gameCount()
   $sql = 'SELECT COUNT(gameID) FROM games';
   $result = mysqli_query($conn, $sql);
   $count = mysqli_fetch_assoc($result)['COUNT(gameID)'];
-  return $count;
+  return $count - 1;
 }
 
 function get_games()
@@ -30,7 +30,7 @@ function get_games()
 
         echo "   <a href='selectedGame.php?gameId=" . $gameId . "' value='$gameId' class='card-title'>";
         echo "<div id='carouselExampleSlidesOnly' class='carousel slide' data-bs-ride='carousel'>";
-        echo "<div class='carousel-inner'>";
+        echo "<div class='carousel-inner-img'>";
         echo " <div class=' carousel-item active card-img '>";
         echo "  <img src='$gameImage' class='card-img'  alt='$gameName'>";
         echo "</div>";
@@ -52,17 +52,34 @@ function get_games()
     }
   }
 }
-function get_games_filtered($gameid)
-{echo "henloi";
+function get_random_game()
+{
   include('config.php');
-  
-  $sql2 = "SELECT * FROM games where gameID =$gameid " ;
+  $sql2 = 'SELECT * FROM games';
+  $result = $conn->query($sql2);
+  if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+      $gameId = $row['gameID'];
+
+      if ($gameId == 0) {
+      } else {
+        $randomGameID = rand(1, gameCount());
+        return $randomGameID;
+      }
+    }
+  }
+}
+function get_games_filtered($tagID)
+{
+
+  include('config.php');
+
+  $sql2 = "SELECT * FROM `games` inner join gametaglist on games.gameID = gametaglist.GameID where gametaglist.TagID=$tagID";
   $result = $conn->query($sql2);
   if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
       $gameId = $row['gameID'];
       $gameName = $row['gameName'];
-      $gameDesc = $row['gameDesc'];
       $gameImage = $row['gameImage'];
       if ($gameId == 0) {
       } else {
@@ -72,7 +89,7 @@ function get_games_filtered($gameid)
 
         echo "   <a href='selectedGame.php?gameId=" . $gameId . "' value='$gameId' class='card-title'>";
         echo "<div id='carouselExampleSlidesOnly' class='carousel slide' data-bs-ride='carousel'>";
-        echo "<div class='carousel-inner'>";
+        echo "<div class='carousel-inner-img'>";
         echo " <div class=' carousel-item active card-img '>";
         echo "  <img src='$gameImage' class='card-img'  alt='$gameName'>";
         echo "</div>";
@@ -93,6 +110,34 @@ function get_games_filtered($gameid)
       }
     }
   }
+  else {
+    echo "<div class='col-xl-2 col-sm-5 col-lg-4 my-4' data-bs-toggle='modal' data-bs-target=''>";
+        echo " <div class='card' >";
+
+        echo "   <a href='' value='' class='card-title'>";
+        echo "<div id='carouselExampleSlidesOnly' class='carousel slide' data-bs-ride='carousel'>";
+        echo "<div class='carousel-inner-img'>";
+        echo " <div class=' carousel-item active card-img '>";
+        echo "  <img src='https://rime.s-ul.eu/xt8bvX9H' class='card-img'  alt=''>";
+        echo "</div>";
+        
+        echo "</div>";
+        echo "</div>";
+
+        echo "   <div class='card-body'>";
+        echo "   <h5 class='card-title'> Oyun Bulunamadı.</h5>";
+        
+        echo "<br>";
+        echo "</a>";
+        echo " </div>";
+        echo "  </div>";
+
+
+        echo "  </div>";
+  }
+}
+function get_games_top3()
+{
 }
 function get_gameImages($gameid)
 {
@@ -142,7 +187,7 @@ function get_games_admin()
         echo "   <a href='deleteGames.php?gameId=" . $gameId . "' value='$gameId' class='btn btn-del'><i class='bi bi-trash3'></i></a>";
         echo "   <a href='selectedGame.php?gameId=" . $gameId . "' value='$gameId' class='card-title'>";
         echo "<div id='carouselExampleSlidesOnly' class='carousel slide' data-bs-ride='carousel'>";
-        echo "<div class='carousel-inner'>";
+        echo "<div class='carousel-inner-img'>";
         echo " <div class=' carousel-item active card-img '>";
         echo "  <img src='$gameImage' class='card-img' alt='$gameName'>";
         echo "</div>";
@@ -187,12 +232,13 @@ function get_tags($gameid)
 function get_tags_admin($gameid)
 {
   include('config.php');
-  $sql = "SELECT tags.TagID as tagid,gametaglist.GameID,tags.TagNAME as tagname FROM gametaglist inner join tags on gametaglist.TagID = tags.TagID where gameID=$gameid";
+  $sql = "SELECT tags.TagID as tagid,gametaglist.GameID as gameid,tags.TagNAME as tagname FROM gametaglist inner join tags on gametaglist.TagID = tags.TagID where gameID=$gameid";
   $result = $conn->query($sql);
   if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
       $tagID = $row['tagid'];
-      echo "<a class='top-seller-tag mb-2' href='deleteTagList.php?tagID=" . $tagID . "'>" . $row['tagname'] . "</a>";
+      $GameID = $row['gameid'];
+      echo "<a class='top-seller-tag mb-2' href='deleteTagList.php?tagID=" . $tagID . "&GameID=".$GameID."'>" . $row['tagname'] . "</a>";
     }
   } else {
     echo "<span class='top-seller-tag'>No Tags</span>";
@@ -231,7 +277,7 @@ function get_all_tags()
   if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
       $tagID = $row['tagID'];
-      echo "<span class='top-seller-tag' " . $row['tagID'] . "'><a href='deleteTags.php?tagID=" . $tagID . "'>" . $row['tagNAME'] . "</a></span>";
+      echo "<span class='tag-list-tag' " . $row['tagID'] . "'><a href='selectedTagGames.php?tagID=" . $tagID . "'>" . $row['tagNAME'] . "</a></span>";
     }
   }
 }
@@ -294,3 +340,5 @@ function selected_game_page()
     }
   }
 }
+
+

@@ -609,6 +609,7 @@ progress {
   border-radius: 0.25rem;
   max-width: 100%;
   height: auto;
+  max-width: 100px;
 }
 
 .figure {
@@ -4513,7 +4514,7 @@ textarea.form-control-lg {
   -moz-box-shadow: 0px 0px 17px -6px rgba(0,0,0,0.75);
   box-shadow: 0px 0px 17px -6px rgba(0,0,0,0.75);
 }
-.card-contact {
+.card-form{
   position: relative;
   display: flex;
   flex-direction: column;
@@ -4528,7 +4529,10 @@ textarea.form-control-lg {
   -webkit-box-shadow: 0px 0px 17px -6px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 0px 17px -6px rgba(0,0,0,0.75);
   box-shadow: 0px 0px 17px -6px rgba(0,0,0,0.75);
+  max-height: 45rem;
+  overflow: scroll;
 }
+
 .card:hover{
   -webkit-box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.75);
@@ -5547,11 +5551,12 @@ textarea.form-control-lg {
   flex-direction: column;
   width: 100%;
   pointer-events: auto;
-  background-color: var(--bs-gray);
+  background-color: black;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 0.3rem;
+  border-radius: 1rem;
   outline: 0;
+
 }
 
 .modal-backdrop {
@@ -6011,9 +6016,11 @@ textarea.form-control-lg {
 }
 
 .carousel-inner {
+  padding-left: 30px;
   position: relative;
   width: 100%;
   overflow: hidden;
+  border-radius: 1.75rem;
 }
 .carousel-inner::after {
   display: block;
@@ -6082,8 +6089,8 @@ textarea.form-control-lg {
 .carousel-control-prev,
 .carousel-control-next {
   position: absolute;
-  top: 0;
-  bottom: 0;
+  right: 0;
+  left: 0;
   z-index: 1;
   display: flex;
   align-items: center;
@@ -6096,6 +6103,7 @@ textarea.form-control-lg {
   border: 0;
   opacity: 0.5;
   transition: opacity 0.15s ease;
+  display: none;
 }
 @media (prefers-reduced-motion: reduce) {
   .carousel-control-prev,
@@ -6113,11 +6121,11 @@ textarea.form-control-lg {
 }
 
 .carousel-control-prev {
-  left: 0;
+  top: 0;
 }
 
 .carousel-control-next {
-  right: 0;
+  bottom: 0;
 }
 
 .carousel-control-prev-icon,
@@ -6148,35 +6156,33 @@ textarea.form-control-lg {
 
 .carousel-indicators {
   position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  top:43%;
   z-index: 2;
   display: flex;
   justify-content: center;
-  padding: 0;
-  margin-right: 15%;
-  margin-bottom: 1rem;
-  margin-left: 15%;
+ 
+
   list-style: none;
+  flex-direction: column;
 }
 .carousel-indicators [data-bs-target] {
   box-sizing: content-box;
   flex: 0 1 auto;
-  width: 30px;
-  height: 3px;
-  padding: 0;
+  width: 15px;
+  height: 15px;
+ padding: 1px;
   margin-right: 3px;
   margin-left: 3px;
   text-indent: -999px;
   cursor: pointer;
   background-color: #fff;
-  background-clip: padding-box;
+  
   border: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
+
   opacity: 0.5;
   transition: opacity 0.6s ease;
+  border-radius: 3rem;
+  transform: scale(0.8);
 }
 @media (prefers-reduced-motion: reduce) {
   .carousel-indicators [data-bs-target] {
@@ -6185,6 +6191,7 @@ textarea.form-control-lg {
 }
 .carousel-indicators .active {
   opacity: 1;
+  transform: scale(1);
 }
 
 .carousel-caption {

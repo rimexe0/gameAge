@@ -27,8 +27,9 @@ else(
   include('companents/navbar.php');
 
 
+
   include("config.php");
-  include("selecGames.php");
+
   if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
   }
@@ -55,9 +56,9 @@ else(
 
         echo "<div class='mx-auto mt-5'>
         <div class='row mx-auto games-page '>
-            <div class='col '>";
+            <div class='col-12 col-lg-6 '>";
             echo "<div id='carouselExampleSlidesOnly' class='carousel slide games-page-img' data-bs-ride='carousel'>";
-            echo "<div class='carousel-inner'>";
+            echo "<div class='carousel-inner-img '>";
             echo " <div class=' carousel-item active  '>" ;
             echo "  <img src='$gameImage' class='games-page-img'  alt='$gameName'>" ;
             echo "</div>";
@@ -72,18 +73,17 @@ else(
             </div>
             <div class='col'>
                 <h1 class='display-2'>$gameName</h1>
-                <h6 class='lead ms-3 mb-3'>by $gamePublisher</h6>
-                <h6 class='lead ms-3 mb-3'>published in $gameDate</h6>";
-        if ($gamePrice == 0) {
+                <h6 class='lead ms-3 mb-3'><b>$gamePublisher</b> tarafından yapıldı</h6>
+                <h6 class='lead ms-3 mb-3'><b>$gameDate</b> Tarihinde yayınlandı</h6>";
+        /*if ($gamePrice == 0) {
           echo " <span class='lead ms-3 mb-3'>FREE</span><span class='lead ms-3 mb-3'><a href='#' class='btn btn-primary button'>Play Now</a></span>";
         } else {
           echo "<span class='lead ms-3 mb-3'>$gamePrice TL</span><span class='lead ms-3 mb-3'><a href='#' class='btn btn-primary button'>Buy Now</a></span>";
-        }
+        }*/
 
         echo "
                 
                
-        <div class='mt-3'><span class='mx-3'><i class='bi bi-hand-thumbs-up-fill'></i>$gameLikes</span><span class='mx-3'><i class='bi bi-hand-thumbs-down-fill'></i>$gameDislikes</span></div>
             </div>
 
         </div>
@@ -95,6 +95,41 @@ else(
       }
     }
   } 
+  else{
+    echo "<div class='mx-auto mt-5'>
+        <div class='row mx-auto games-page '>
+            <div class='col '>";
+            echo "<div id='carouselExampleSlidesOnly' class='carousel slide games-page-img' data-bs-ride='carousel'>";
+            echo "<div class='carousel-inner-img >";
+            echo " <div class=' carousel-item active  '>" ;
+            echo "  <img src='https://rime.s-ul.eu/xt8bvX9H' class='games-page-img'  alt=''>" ;
+            echo "</div>";
+           
+            echo "</div>";
+            echo "</div>";
+            
+            
+              echo "  <div class='mt-2'>";
+       
+        echo "</div>
+            </div>
+            <div class='col'>
+                <h1 class='display-2'>Oyun Bulunamadı.</h1>
+                ";
+     
+
+        echo "
+                
+               
+            </div>
+
+        </div>
+        <div class='mx-auto games-page mt-5 '>
+            <p class='lead '></p>
+        </div>
+    </div>
+";
+  }
   
   include("companents/footer.php");
   
@@ -102,6 +137,8 @@ else(
   
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/js/splide.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+
     
 </body>
 
