@@ -2,7 +2,7 @@
 $servername = 'localhost';
 $username = 'root';
 $password = '4112';
-$dbname = 'gamesite';
+$dbname = 'database';
 
 $conn = new mysqli($servername, $username, $password,$dbname);
 

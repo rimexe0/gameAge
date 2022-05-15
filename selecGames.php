@@ -27,7 +27,6 @@ function get_games()
 
         echo "<div class='col-xl-2 col-sm-5 col-lg-4 my-4' data-bs-toggle='modal' data-bs-target='#game_$gameId'>";
         echo " <div class='card' >";
-
         echo "   <a href='selectedGame.php?gameId=" . $gameId . "' value='$gameId' class='card-title'>";
         echo "<div id='carouselExampleSlidesOnly' class='carousel slide' data-bs-ride='carousel'>";
         echo "<div class='carousel-inner-img'>";
@@ -37,7 +36,6 @@ function get_games()
         get_gameImages($gameId);
         echo "</div>";
         echo "</div>";
-
         echo "   <div class='card-body'>";
         echo "   <h5 class='card-title'> $gameName</h5>";
         get_tags($gameId);
@@ -45,8 +43,6 @@ function get_games()
         echo "</a>";
         echo " </div>";
         echo "  </div>";
-
-
         echo "  </div>";
       }
     }
@@ -61,8 +57,8 @@ function get_random_game()
     while ($row = $result->fetch_assoc()) {
       $gameId = $row['gameID'];
 
-      if ($gameId == 0) {
-      } else {
+      if ($gameId == 0) {}
+       else {
         $randomGameID = rand(1, gameCount());
         return $randomGameID;
       }
@@ -136,9 +132,7 @@ function get_games_filtered($tagID)
         echo "  </div>";
   }
 }
-function get_games_top3()
-{
-}
+
 function get_gameImages($gameid)
 {
   include('config.php');

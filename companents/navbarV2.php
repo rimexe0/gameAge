@@ -57,12 +57,12 @@ function navbarJs()
               $(window).scroll(function(){
                var scroll = $(window).scrollTop();
                if (scroll > 300) {
-                 $( '#navitems' ).addClass( 'movenav' );
+                 $( '#navitems' ).removeClass( 'navitems' );
                  $('.bg').css('height','40px');
                }
             
                else{
-                 $( '#navitems' ).removeClass( 'movenav' );
+                 $( '#navitems' ).addClass( 'navitems' );
                  
                  $('.bg').css('height','100px');
                }
